@@ -8,29 +8,42 @@ import Product from './components/Product'
 import Button from './components/Button'
 import ClassBasedProduct from './components/ClassBasedProduct'
 import Greet from './components/Greet'
-
+import Counter from './components/Counter'
+import UserDeatils from './components/UserDeatils'
+import UserDetails1 from './users/UserDetails'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const subheading ={
-    textAlign:'center',
-    textShadow:'2px 2px 1px red'
+
+  const subheading = {
+    textAlign: 'center',
+    textShadow: '2px 2px 1px red'
   }
+
   return (
     <>
-  <Greet  user={{name:'Sana', session:5, exam:0}} />
-  <Greet user={{name:'Shivam', session:2, exam:10}} />
-  <Greet user={{name:'Akash', session:0,  exam:10}} />
-  <Greet user={{name:'Nayan', session:10,  exam:20}} />
+      <UserDetails1 />
+      <UserDeatils />
+      <Counter />
 
+      <Greet user={{ name: 'Sana', session: 5, exam: 0 }} />
+      <Greet user={{ name: 'Shivam', session: 2, exam: 10 }} />
+      <Greet user={{ name: 'Akash', session: 0, exam: 10 }} />
+      <Greet user={{ name: 'Nayan', session: 10, exam: 20 }} />
 
-    <h1 style={{color:"red", textAlign:'center'}}>Hello World </h1>
-    <h3 style={subheading}>Welcome to my REact tutorial</h3>
-    {/* <button>Register</button> */}
-    <Button text123="Registerrrrrrrrr"/>
-<Product ></Product>
-<ClassBasedProduct />
+      <h1 style={{ color: "red", textAlign: 'center' }}>Hello World</h1>
+      <h3 style={subheading}>Welcome to my React tutorial</h3>
 
+      <Button text123="Registerrrrrrrrr" />
+
+      {/* iPhone Image */}
+      <div style={{ textAlign: "center" }}>
+        <img src={iPhone17} alt="iPhone 17" width="250" />
+      </div>
+
+      <Product />
+      <ClassBasedProduct />
     </>
   )
 }
