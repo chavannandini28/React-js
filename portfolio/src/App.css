@@ -1,0 +1,8 @@
+.box{
+  height: 700px;
+  
+}
+
+.customIcon:hover{
+  color: red !important;
+}
