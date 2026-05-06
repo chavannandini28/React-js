@@ -1,0 +1,6 @@
+.btnCommon{
+  background-color: rgb(233, 53, 83);
+  color:brown;
+  border: 2px dashed brown;
+  outline: 3px solid pink;
+}
