@@ -1,49 +1,33 @@
-import Sidebar from "../components/Sidebar"
-import Navbar from "../components/Navbar"
-import UserTable from "../components/UserTable"
-import { useNavigate } from "react-router-dom"
+import React from 'react'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ProductList from '../components/ProductList'
 
-function Dashboard(){
+const Dashboard = ({loggedUser}) => {
+    console.log("Dashboard",loggedUser)
+  return (
+    <>
 
-const navigate = useNavigate()
+    <Navbar loggedUser={loggedUser} />
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-2 bg-secondary text-white" style={{height:"90vh"}}>
+          <div className='' style={{height:"90vh"}}>
+          <input type='search' className=''/>
+          <button className='btn btn-primary'>Search</button>
+          <div style={{width:'60px'}}>Filter</div>
+          add drop down for filter
+          </div>
+        </div>
+        <div className="col-10 ">
+            <ProductList />
+        </div>
+      </div>
+    </div>
 
-const logout = ()=>{
-
-localStorage.removeItem("currentUser")
-
-navigate("/")
-
-}
-
-return(
-
-<div className="d-flex">
-
-<Sidebar/>
-
-<div className="flex-grow-1">
-
-<Navbar/>
-
-<div className="container mt-4">
-
-<button
-className="btn btn-danger mb-3"
-onClick={logout}
->
-Logout
-</button>
-
-<UserTable/>
-
-</div>
-
-</div>
-
-</div>
-
-)
-
+    <Footer />
+    </>
+  )
 }
 
 export default Dashboard
